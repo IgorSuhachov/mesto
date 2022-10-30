@@ -14,3 +14,5 @@
 
 ## Методология
 * BEM Nested
+
+### Проект можно посмотреть по ссылке : https://igorsuhachov.github.io/mesto/
