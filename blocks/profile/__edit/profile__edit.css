@@ -1,0 +1,10 @@
+.profile__edit {
+  width: 24px;
+  height: 24px;
+  background-image: url(../../../images/pen.png);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
