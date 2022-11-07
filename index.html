@@ -10,23 +10,87 @@
 </head>
 
 <body class="body">
+  <!-- HEADER -->
   <header class="header">
-    <img src="./images/logo.svg" alt="логотип" class="logo">
-    <div class="header__line"></div>
+    <img src="./images/logo.svg" alt="логотип">
   </header>
   <main>
+    <!-- PROFILE -->
     <section class="profile">
       <img src="./images/Avatar.png" alt="аватар" class="profile__avatar">
       <div class="profile__info">
         <div class="profile__container">
-          <p class="profile__name">Жак-Ив Кусто</p>
+          <h1 class="profile__name">Жак-Ив Кусто</h1>
           <button class="profile__edit" type="button"></button>
         </div>
         <p class="profile__description">Исследователь океана</p>
       </div>
       <button class="profile__add" type="button"></button>
     </section>
+    <!-- ELEMENTS -->
+    <section class="elements">
+      <ul class="elements__cards">
+        <li class="elements__card">
+          <img src="./images/karachaevo-cher.png" alt="Карачаевск" class="elements__image">
+          <div class="elements__header">
+            <h2 class="elements__title">Карачаевск</h2>
+            <button class="elements__like" type="button"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img src="./images/elbrus.png" alt="Гора Эльбрус" class="elements__image">
+          <div class="elements__header">
+            <h2 class="elements__title">Гора Эльбрус</h2>
+            <button class="elements__like" type="button"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img src="./images/dombai.png" alt="Домбай" class="elements__image">
+          <div class="elements__header">
+            <h2 class="elements__title">Домбай</h2>
+            <button class="elements__like" type="button"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img src="./images/elbrus.png" alt="Гора Эльбрус" class="elements__image">
+          <div class="elements__header">
+            <h2 class="elements__title">Гора Эльбрус</h2>
+            <button class="elements__like" type="button"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img src="./images/dombai.png" alt="Домбай" class="elements__image">
+          <div class="elements__header">
+            <h2 class="elements__title">Домбай</h2>
+            <button class="elements__like" type="button"></button>
+          </div>
+        </li>
+        <li class="elements__card">
+          <img src="./images/karachaevo-cher.png" alt="Карачаево-Черкессия" class="elements__image">
+          <div class="elements__header">
+            <h2 class="elements__title">Карачаево-Черкессия</h2>
+            <button class="elements__like elements__like_active" type="button"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+    <!-- POPUP -->
+    <section class="popup">
+      <div class="popup__container">
+        <button class="popup__close" type="button"></button>
+        <form class="popup__form">
+          <h2 class="popup__title">Редактировать профиль</h2>
+          <input type="text" placeholder="Введите имя" class="popup__input">
+          <input type="text" placeholder="Введите описание" class="popup__input">
+          <input type="submit" value="Сохранить" class="popup__save">
+        </form>
+      </div>
+    </section>
   </main>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__text">&copy; 2022 Mesto Russia</p>
+  </footer>
 </body>
 
 </html>
