@@ -1,13 +1,13 @@
-let popup = document.querySelector(".popup")
-let popupForm = document.querySelector(".popup__form")
-let popupClose = document.querySelector(".popup__close")
+const popup = document.querySelector(".popup")
+const popupForm = document.querySelector(".popup__form")
+const popupClose = document.querySelector(".popup__close")
 
-let profileName = document.querySelector(".profile__name")
-let profileDescription = document.querySelector(".profile__description")
-let profileEdit = document.querySelector(".profile__edit")
+const profileName = document.querySelector(".profile__name")
+const profileDescription = document.querySelector(".profile__description")
+const profileEdit = document.querySelector(".profile__edit")
 
-let setProfileName = document.querySelector(".setProfileName")
-let setProfileDescription = document.querySelector(".setProfileDescription")
+const setProfileName = document.querySelector(".setProfileName")
+const setProfileDescription = document.querySelector(".setProfileDescription")
 
 function openPopup() {
   popup.classList.add("popup__opened")
@@ -23,7 +23,7 @@ function userData() {
   openPopup()
 }
 
-function SaveData(evt) {
+function saveData() {
   profileName.textContent = setProfileName.value
   profileDescription.textContent = setProfileDescription.value
   closePopup()
@@ -31,7 +31,7 @@ function SaveData(evt) {
 
 popupForm.addEventListener("submit", function (evt) {
   evt.preventDefault()
-  SaveData()
+  saveData()
 })
 
 profileEdit.addEventListener("click", userData)
