@@ -4,3 +4,19 @@
   gap: 17px;
   padding: 0;
 }
+
+@media screen and (max-width: 910px){
+  .elements__cards {
+    grid-template-columns: repeat(2, 282px);
+    margin: 0 19px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 620px){
+  .elements__cards {
+    margin: 0 19px;
+    grid-template-columns: 282px;;
+    justify-content: center;
+  }
+}

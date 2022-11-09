@@ -13,3 +13,9 @@
 .profile__add:hover {
   opacity: .6;
 }
+
+@media screen and (max-width: 910px) {
+  .profile__add {
+    width: 282px;
+  }
+}

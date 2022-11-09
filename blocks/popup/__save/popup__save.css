@@ -16,3 +16,9 @@
 .popup__save:hover {
   background-color: rgba(0, 0, 0, .8);
 }
+
+@media screen and (max-width: 720px) {
+  .popup__save {
+    margin-top: 15px;
+  }
+}

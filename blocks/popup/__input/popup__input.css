@@ -10,3 +10,9 @@
   color: #000;
   min-width: 358px;
 }
+
+@media screen and (max-width:720px) {
+  .popup__input {
+    min-width: 238px;
+  }
+}

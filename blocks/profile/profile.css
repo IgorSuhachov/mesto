@@ -3,3 +3,10 @@
   align-items: center;
   margin: 40px 0 50px;
 }
+
+@media screen and (max-width:910px){
+  .profile {
+    margin: 42px 19px 36px;
+    flex-direction: column;
+  }
+}

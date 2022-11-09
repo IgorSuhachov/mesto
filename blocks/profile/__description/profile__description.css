@@ -5,3 +5,10 @@
   color: #fff;
   margin: 0;
 }
+
+@media screen and (max-width:910px) {
+  .profile__description {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
