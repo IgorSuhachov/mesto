@@ -16,7 +16,7 @@
 @media screen and (max-width: 620px){
   .elements__cards {
     margin: 0 19px;
-    grid-template-columns: 282px;;
+    grid-template-columns: 282px;
     justify-content: center;
   }
 }
