@@ -6,26 +6,26 @@ const profileName = document.querySelector(".profile__name")
 const profileDescription = document.querySelector(".profile__description")
 const profileEdit = document.querySelector(".profile__edit")
 
-const setProfileName = document.querySelector(".setProfileName")
-const setProfileDescription = document.querySelector(".setProfileDescription")
+const newProfileName = document.querySelector("#setProfileName")
+const newProfileDescription = document.querySelector("#setProfileDescription")
 
 function openPopup() {
-  popup.classList.add("popup__opened")
+  popup.classList.add("popup_opened")
 }
 
 function closePopup() {
-  popup.classList.remove("popup__opened")
+  popup.classList.remove("popup_opened")
 }
 
-function userData() {
-  setProfileName.value = profileName.textContent
-  setProfileDescription.value = profileDescription.textContent
+function setData() {
+  newProfileName.value = profileName.textContent
+  newProfileDescription.value = profileDescription.textContent
   openPopup()
 }
 
 function saveData() {
-  profileName.textContent = setProfileName.value
-  profileDescription.textContent = setProfileDescription.value
+  profileName.textContent = newProfileName.value
+  profileDescription.textContent = newProfileDescription.value
   closePopup()
 }
 
@@ -34,5 +34,5 @@ popupForm.addEventListener("submit", function (evt) {
   saveData()
 })
 
-profileEdit.addEventListener("click", userData)
+profileEdit.addEventListener("click", setData)
 popupClose.addEventListener("click", closePopup)
