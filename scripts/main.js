@@ -15,7 +15,10 @@ const editForm = document.querySelector('#editForm')
 const editClose = document.querySelector('#editClose')
 
 // ELEMENTS
+const elementTemplate = document.querySelector('#card').content
 const elementsContainer = document.querySelector('.elements')
+const elementTitle = document.querySelector('#elementTitle')
+const elementImage = document.querySelector('#elementImage')
 
 // IMAGE
 const popupImage = document.querySelector('#popupImage')
@@ -71,7 +74,6 @@ function saveData() {
 }
 // Отобразить карточки
 function displayElement(card) {
-  const elementTemplate = document.querySelector('#card').content
   const element = elementTemplate.querySelector('.elements__card').cloneNode(true)
   const elementsTitle = element.querySelector('.elements__title')
   const elementsImage = element.querySelector('.elements__image')
@@ -80,8 +82,6 @@ function displayElement(card) {
   elementsImage.alt = card.name
   elementsTitle.textContent = card.name
 
-  element.querySelector('.elements__title').textContent = card.name
-  element.querySelector('.elements__image').src = card.link
   element.querySelector('.elements__image').addEventListener('click', openPopupImage)
 
   element.querySelector('.elements__like').addEventListener('click', (evt) => {
@@ -107,9 +107,6 @@ function addElement(card, container) {
 }
 // Создать карточки
 function createElement() {
-  const elementTitle = document.querySelector('#elementTitle')
-  const elementImage = document.querySelector('#elementImage')
-
   const newElementData = {
     name: elementTitle.value,
     link: elementImage.value
