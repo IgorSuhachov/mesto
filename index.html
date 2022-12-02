@@ -29,62 +29,46 @@
     </section>
     <!-- ELEMENTS -->
     <section class="elements">
-      <ul class="elements__cards">
-        <li class="elements__card">
-          <img src="./images/karachaevo-cher.png" alt="Карачаевск" class="elements__image">
+      <template id="card">
+        <div class="elements__card">
+          <button class="elements__trash" type="button"></button>
+          <img class="elements__image">
           <div class="elements__header">
-            <h2 class="elements__title">Карачаевск</h2>
+            <h2 class="elements__title"></h2>
             <button class="elements__like" type="button"></button>
           </div>
-        </li>
-        <li class="elements__card">
-          <img src="./images/elbrus.png" alt="Гора Эльбрус" class="elements__image">
-          <div class="elements__header">
-            <h2 class="elements__title">Гора Эльбрус</h2>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </li>
-        <li class="elements__card">
-          <img src="./images/dombai.png" alt="Домбай" class="elements__image">
-          <div class="elements__header">
-            <h2 class="elements__title">Домбай</h2>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </li>
-        <li class="elements__card">
-          <img src="./images/elbrus.png" alt="Гора Эльбрус" class="elements__image">
-          <div class="elements__header">
-            <h2 class="elements__title">Гора Эльбрус</h2>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </li>
-        <li class="elements__card">
-          <img src="./images/dombai.png" alt="Домбай" class="elements__image">
-          <div class="elements__header">
-            <h2 class="elements__title">Домбай</h2>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </li>
-        <li class="elements__card">
-          <img src="./images/karachaevo-cher.png" alt="Карачаево-Черкессия" class="elements__image">
-          <div class="elements__header">
-            <h2 class="elements__title">Карачаево-Черкессия</h2>
-            <button class="elements__like" type="button"></button>
-          </div>
-        </li>
-      </ul>
+        </div>
+      </template>
     </section>
     <!-- POPUP -->
-    <section class="popup">
+    <section class="popup" id="popupProfile">
       <div class="popup__container">
-        <button class="popup__close" type="button"></button>
-        <form class="popup__form" name="popup">
+        <button class="popup__close" type="button" id="profileClose"></button>
+        <form class="popup__form" name="popup" id="profileForm">
           <h2 class="popup__title">Редактировать профиль</h2>
           <input type="text" placeholder="Введите имя" class="popup__input" id="setProfileName" name="name">
           <input type="text" placeholder="Введите описание" class="popup__input" id="setProfileDescription"
             name="description">
-          <button class=" popup__save">Сохранить</button>
+          <button class="popup__save">Сохранить</button>
         </form>
+      </div>
+    </section>
+    <section class="popup" id="popupEdit">
+      <div class="popup__container">
+        <button class="popup__close" type="button" id="editClose"></button>
+        <form class="popup__form" name="popup__image" id="editForm">
+          <h2 class="popup__title">Новое место</h2>
+          <input type="text" placeholder="Название" class="popup__input" id="elementTitle">
+          <input type="text" placeholder="Ссылка на картинку" class="popup__input" id="elementImage">
+          <button class="popup__save" id="popupCreate">Создать</button>
+        </form>
+      </div>
+    </section>
+    <section class="popup" id="popupImage">
+      <div class="popup__container_image">
+        <button class="popup__close" type="button" id="imageClose"></button>
+        <img class="popup__image">
+        <p class="popup__text">Байкал</p>
       </div>
     </section>
   </main>
