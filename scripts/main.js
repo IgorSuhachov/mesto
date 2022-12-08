@@ -115,8 +115,7 @@ function createElement() {
   const newElement = displayElement(newElementData)
   addElement(newElement, elementsContainer)
 
-  elementTitle.value = ''
-  elementImage.value = ''
+  editForm.reset()
 
   closePopup(popupEdit)
 }
