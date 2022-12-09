@@ -55,6 +55,11 @@ const initialCards = [{
 // Открыть popup
 function openPopup(popup) {
   popup.classList.add("popup_opened")
+  document.addEventListener('keydown', function (evt) {
+    if (evt.key === 'Escape') {
+      closePopup(popup)
+    }
+  })
 }
 // Закрыть popup
 function closePopup(popup) {

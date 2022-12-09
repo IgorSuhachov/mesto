@@ -46,9 +46,10 @@
         <button class="popup__close" type="button" id="profileClose"></button>
         <form class="popup__form" name="popup" id="profileForm">
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" placeholder="Введите имя" class="popup__input" id="setProfileName" name="name">
+          <input type="text" placeholder="Введите имя" class="popup__input" id="setProfileName" name="name" required
+            minlength="2" maxlength="40">
           <input type="text" placeholder="Введите описание" class="popup__input" id="setProfileDescription"
-            name="description">
+            name="description" required minlength="2" maxlength="200">
           <button class="popup__save">Сохранить</button>
         </form>
       </div>
@@ -58,8 +59,10 @@
         <button class="popup__close" type="button" id="editClose"></button>
         <form class="popup__form" name="popup__image" id="editForm">
           <h2 class="popup__title">Новое место</h2>
-          <input type="text" placeholder="Название" class="popup__input" id="elementTitle">
-          <input type="text" placeholder="Ссылка на картинку" class="popup__input" id="elementImage">
+          <input type="text" placeholder="Название" class="popup__input" id="elementTitle" required minlength="2"
+            maxlength="30">
+          <input type="text" placeholder="Ссылка на картинку" class="popup__input" id="elementImage" required
+            type="url">
           <button class="popup__save" id="popupCreate">Создать</button>
         </form>
       </div>
