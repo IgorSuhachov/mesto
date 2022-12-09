@@ -55,8 +55,15 @@ const initialCards = [{
 // Открыть popup
 function openPopup(popup) {
   popup.classList.add("popup_opened")
+  // Закрытие по нажатию на Escape
   document.addEventListener('keydown', function (evt) {
     if (evt.key === 'Escape') {
+      closePopup(popup)
+    }
+  })
+  // Закрытие по нажатию overlay
+  popup.addEventListener('click', function (evt) {
+    if (evt.target === popup) {
       closePopup(popup)
     }
   })
