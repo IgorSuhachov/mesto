@@ -46,20 +46,20 @@
         <button class="popup__close" type="button" id="profileClose"></button>
         <form class="popup__form" name="popup" id="profileForm" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
-          <input type="text" placeholder="Введите имя" class="popup__input" id="setProfileName" name="name" required
+          <input type="text" placeholder="Введите имя" class="popup__input" id="profileName" name="name" required
             minlength="2" maxlength="40">
-          <span class="popup__error setProfileName-error"></span>
-          <input type="text" placeholder="Введите описание" class="popup__input" id="setProfileDescription"
+          <span class="popup__error profileName-error"></span>
+          <input type="text" placeholder="Введите описание" class="popup__input" id="profileDescription"
             name="description" required minlength="2" maxlength="200">
-          <span class="popup__error setProfileDescription-error"></span>
+          <span class="popup__error profileDescription-error"></span>
           <button class="popup__save">Сохранить</button>
         </form>
       </div>
     </section>
     <section class="popup" id="popupEdit">
       <div class="popup__container">
-        <button class="popup__close" type="button" id="editClose"></button>
-        <form class="popup__form" name="popup__image" id="editForm" novalidate>
+        <button class="popup__close" type="button" id="cardClose"></button>
+        <form class="popup__form" name="popup__image" id="cardForm" novalidate>
           <h2 class="popup__title">Новое место</h2>
           <input type="text" placeholder="Название" class="popup__input" id="elementTitle" required minlength="2"
             maxlength="30">
@@ -83,6 +83,7 @@
     <p class="footer__text">&copy; 2022 Mesto Russia</p>
   </footer>
 
+  <script src="./scripts/cards.js"></script>
   <script src="./scripts/main.js"></script>
   <script src="./scripts/validate.js"></script>
 </body>

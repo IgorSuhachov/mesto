@@ -11,8 +11,8 @@ const newProfileDescription = document.querySelector("#setProfileDescription")
 
 // EDIT
 const popupEdit = document.querySelector('#popupEdit')
-const editForm = document.querySelector('#editForm')
-const editClose = document.querySelector('#editClose')
+const cardForm = document.querySelector('#cardForm')
+const cardClose = document.querySelector('#cardClose')
 
 // ELEMENTS
 const elementTemplate = document.querySelector('#card').content
@@ -26,32 +26,6 @@ const imageClose = document.querySelector('#imageClose')
 const imageElement = document.querySelector('.popup__image')
 const imageText = document.querySelector('.popup__text')
 
-// Данные карточек
-const initialCards = [{
-    name: 'Архыз',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg'
-  },
-  {
-    name: 'Челябинская область',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/chelyabinsk-oblast.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Камчатка',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
-  },
-  {
-    name: 'Холмогорский район',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kholmogorsky-rayon.jpg'
-  },
-  {
-    name: 'Байкал',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg'
-  }
-]
 // Открыть popup
 function openPopup(popup) {
   popup.classList.add("popup_opened")
@@ -73,13 +47,13 @@ function closePopup(popup) {
   popup.classList.remove("popup_opened")
 }
 // Заполнить данные профиля
-function setData() {
+function setProfileData() {
   newProfileName.value = profileName.textContent
   newProfileDescription.value = profileDescription.textContent
   openPopup(popupProfile)
 }
 // Сохранить данные профиля
-function saveData() {
+function saveProfileData() {
   profileName.textContent = newProfileName.value
   profileDescription.textContent = newProfileDescription.value
   closePopup(popupProfile)
@@ -127,7 +101,7 @@ function createElement() {
   const newElement = displayElement(newElementData)
   addElement(newElement, elementsContainer)
 
-  editForm.reset()
+  cardForm.reset()
 
   closePopup(popupEdit)
 }
@@ -139,16 +113,16 @@ initialCards.forEach(elementData => {
 
 profileForm.addEventListener("submit", (evt) => {
   evt.preventDefault()
-  saveData()
+  saveProfileData()
 })
 
-editForm.addEventListener('submit', (evt) => {
+cardForm.addEventListener('submit', (evt) => {
   evt.preventDefault()
   createElement()
 })
 
-profileEdit.addEventListener("click", setData)
+profileEdit.addEventListener("click", setProfileData)
 profileClose.addEventListener("click", () => closePopup(popupProfile))
 profileAdd.addEventListener('click', () => openPopup(popupEdit))
-editClose.addEventListener('click', () => closePopup(popupEdit))
+cardClose.addEventListener('click', () => closePopup(popupEdit))
 imageClose.addEventListener('click', () => closePopup(popupImage))
