@@ -2,17 +2,12 @@
   border-style: none;
   border-bottom: 1px solid rgba(0, 0, 0, .2);
   outline: none;
-  margin-bottom: 25px;
   padding: 0 0 15px 0;
   font-size: 14px;
   font-weight: 400;
   line-height: 17px;
   color: #000;
   min-width: 358px;
-}
-
-.popup__input:last-of-type {
-  margin-bottom: 38px;
 }
 
 @media screen and (max-width:720px) {

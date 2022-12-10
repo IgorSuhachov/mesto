@@ -44,12 +44,14 @@
     <section class="popup" id="popupProfile">
       <div class="popup__container">
         <button class="popup__close" type="button" id="profileClose"></button>
-        <form class="popup__form" name="popup" id="profileForm">
+        <form class="popup__form" name="popup" id="profileForm" novalidate>
           <h2 class="popup__title">Редактировать профиль</h2>
           <input type="text" placeholder="Введите имя" class="popup__input" id="setProfileName" name="name" required
             minlength="2" maxlength="40">
+          <span class="popup__error setProfileName-error"></span>
           <input type="text" placeholder="Введите описание" class="popup__input" id="setProfileDescription"
             name="description" required minlength="2" maxlength="200">
+          <span class="popup__error setProfileDescription-error"></span>
           <button class="popup__save">Сохранить</button>
         </form>
       </div>
@@ -57,11 +59,13 @@
     <section class="popup" id="popupEdit">
       <div class="popup__container">
         <button class="popup__close" type="button" id="editClose"></button>
-        <form class="popup__form" name="popup__image" id="editForm">
+        <form class="popup__form" name="popup__image" id="editForm" novalidate>
           <h2 class="popup__title">Новое место</h2>
           <input type="text" placeholder="Название" class="popup__input" id="elementTitle" required minlength="2"
             maxlength="30">
+          <span class="popup__error elementTitle-error"></span>
           <input type="url" placeholder="Ссылка на картинку" class="popup__input" id="elementImage" required>
+          <span class="popup__error elementImage-error"></span>
           <button class="popup__save" id="popupCreate">Создать</button>
         </form>
       </div>
