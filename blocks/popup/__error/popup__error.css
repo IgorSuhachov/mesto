@@ -7,3 +7,9 @@
   max-width: 358px;
   visibility: hidden;
 }
+
+@media screen and (max-width:720px) {
+  .popup__error {
+    max-width: 238px;
+  }
+}
