@@ -6,8 +6,8 @@ const profileName = document.querySelector(".profile__name")
 const profileDescription = document.querySelector(".profile__description")
 const profileEdit = document.querySelector(".profile__edit")
 const profileAdd = document.querySelector('.profile__add')
-const newProfileName = document.querySelector("#setProfileName")
-const newProfileDescription = document.querySelector("#setProfileDescription")
+const newProfileName = document.querySelector("#profileName")
+const newProfileDescription = document.querySelector("#profileDescription")
 
 // EDIT
 const popupEdit = document.querySelector('#popupEdit')
