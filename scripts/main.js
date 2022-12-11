@@ -8,7 +8,6 @@ const profileEdit = document.querySelector(".profile__edit")
 const profileAdd = document.querySelector('.profile__add')
 const newProfileName = document.querySelector("#profileName")
 const newProfileDescription = document.querySelector("#profileDescription")
-
 // EDIT
 const popupEdit = document.querySelector('#popupEdit')
 const cardForm = document.querySelector('#cardForm')
@@ -29,22 +28,29 @@ const imageText = document.querySelector('.popup__text')
 // Открыть popup
 function openPopup(popup) {
   popup.classList.add("popup_opened")
-  // Закрытие по нажатию на Escape
-  document.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
-      closePopup(popup)
-    }
-  })
+  // Вызов слушателя по нажатию на Escape
+  document.addEventListener('keydown', closeOnEsc)
   // Закрытие по нажатию overlay
-  popup.addEventListener('click', function (evt) {
-    if (evt.target === popup) {
-      closePopup(popup)
-    }
-  })
+  popup.addEventListener('click', closeOnOverlay)
+}
+// Закрытие popup по нажатию на Escape
+function closeOnEsc(evt) {
+  if (evt.key === 'Escape') {
+    const popupOpened = document.querySelector(".popup_opened")
+    closePopup(popupOpened)
+  }
+}
+// Закрытие popup по нажатию на overlay
+function closeOnOverlay(evt) {
+  const popupOpened = document.querySelector(".popup_opened")
+  if (evt.target === popupOpened) {
+    closePopup(popupOpened)
+  }
 }
 // Закрыть popup
 function closePopup(popup) {
   popup.classList.remove("popup_opened")
+  document.removeEventListener('keydown', closeOnEsc)
 }
 // Заполнить данные профиля
 function setProfileData() {
