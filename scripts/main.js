@@ -8,6 +8,7 @@ const profileEdit = document.querySelector(".profile__edit")
 const profileAdd = document.querySelector('.profile__add')
 const newProfileName = document.querySelector("#profileName")
 const newProfileDescription = document.querySelector("#profileDescription")
+
 // EDIT
 const popupEdit = document.querySelector('#popupEdit')
 const cardForm = document.querySelector('#cardForm')
@@ -64,6 +65,12 @@ function saveProfileData() {
   profileDescription.textContent = newProfileDescription.value
   closePopup(popupProfile)
 }
+// Отключить кнопку submit
+function disableSumbitButton(popup) {
+  const button = popup.querySelector('.popup__save')
+  button.disabled = true
+  button.classList.add('popup__save_disabled')
+}
 // Отобразить карточки
 function displayElement(card) {
   const element = elementTemplate.querySelector('.elements__card').cloneNode(true)
@@ -107,6 +114,7 @@ function createElement() {
   const newElement = displayElement(newElementData)
   addElement(newElement, elementsContainer)
 
+  disableSumbitButton(popupEdit)
   cardForm.reset()
 
   closePopup(popupEdit)
