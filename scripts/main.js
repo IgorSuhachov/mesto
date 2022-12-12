@@ -28,11 +28,14 @@ const imageText = document.querySelector('.popup__text')
 
 // Открыть popup
 function openPopup(popup) {
+  const popups = Array.from(document.querySelectorAll('.popup'))
   popup.classList.add("popup_opened")
   // Вызов слушателя по нажатию на Escape
   document.addEventListener('keydown', closeOnEsc)
   // Закрытие по нажатию overlay
-  popup.addEventListener('click', closeOnOverlay)
+  popups.forEach((popup) => {
+    popup.addEventListener('click', closeOnOverlay)
+  })
 }
 // Закрытие popup по нажатию на Escape
 function closeOnEsc(evt) {
@@ -43,9 +46,8 @@ function closeOnEsc(evt) {
 }
 // Закрытие popup по нажатию на overlay
 function closeOnOverlay(evt) {
-  const popupOpened = document.querySelector(".popup_opened")
-  if (evt.target === popupOpened) {
-    closePopup(popupOpened)
+  if (evt.target.classList.contains('popup')) {
+    closePopup(evt.target)
   }
 }
 // Закрыть popup
@@ -66,10 +68,10 @@ function saveProfileData() {
   closePopup(popupProfile)
 }
 // Отключить кнопку submit
-function disableSumbitButton(popup) {
-  const button = popup.querySelector('.popup__save')
+function disableSumbitButton(popup, validProperties) {
+  const button = popup.querySelector(`${validProperties.submitButtonSelector}`)
   button.disabled = true
-  button.classList.add('popup__save_disabled')
+  button.classList.add(`${validProperties.inactiveButtonClass}`)
 }
 // Отобразить карточки
 function displayElement(card) {
@@ -114,7 +116,7 @@ function createElement() {
   const newElement = displayElement(newElementData)
   addElement(newElement, elementsContainer)
 
-  disableSumbitButton(popupEdit)
+  disableSumbitButton(popupEdit, validationProperties)
   cardForm.reset()
 
   closePopup(popupEdit)
