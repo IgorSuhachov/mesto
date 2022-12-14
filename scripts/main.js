@@ -8,6 +8,7 @@ const profileEdit = document.querySelector(".profile__edit")
 const profileAdd = document.querySelector('.profile__add')
 const newProfileName = document.querySelector("#profileName")
 const newProfileDescription = document.querySelector("#profileDescription")
+const popups = Array.from(document.querySelectorAll('.popup'))
 
 // EDIT
 const popupEdit = document.querySelector('#popupEdit')
@@ -28,7 +29,6 @@ const imageText = document.querySelector('.popup__text')
 
 // Открыть popup
 function openPopup(popup) {
-  const popups = Array.from(document.querySelectorAll('.popup'))
   popup.classList.add("popup_opened")
   // Вызов слушателя по нажатию на Escape
   document.addEventListener('keydown', closeOnEsc)
