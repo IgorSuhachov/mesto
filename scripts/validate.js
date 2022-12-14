@@ -42,7 +42,7 @@ const setEventListeners = (formElement, validationProperties) => {
     })
   })
 }
-const enableValidation = () => {
+const enableValidation = (validationProperties) => {
   const formList = Array.from(document.querySelectorAll(validationProperties.formSelector))
 
   formList.forEach((formElement) => {
@@ -58,14 +58,23 @@ function hasInvalidInput(inputList) {
     return !inputElement.validity.valid
   })
 }
+
+function disableSumbitButton(buttonElement) {
+  buttonElement.disabled = true
+  buttonElement.classList.add(validationProperties.inactiveButtonClass)
+}
+
+function enableSumbitButton(buttonElement) {
+  buttonElement.disabled = false
+  buttonElement.classList.remove(validationProperties.inactiveButtonClass);
+}
+
 // Переключение статуса кнопки submit
 function toggleButtonState(inputList, buttonElement) {
   if (hasInvalidInput(inputList)) {
-    buttonElement.disabled = true
-    buttonElement.classList.add(validationProperties.inactiveButtonClass);
+    disableSumbitButton(buttonElement)
   } else {
-    buttonElement.disabled = false
-    buttonElement.classList.remove(validationProperties.inactiveButtonClass);
+    enableSumbitButton(buttonElement)
   }
 }
 

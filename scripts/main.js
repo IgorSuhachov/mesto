@@ -9,7 +9,7 @@ const profileAdd = document.querySelector('.profile__add')
 const newProfileName = document.querySelector("#profileName")
 const newProfileDescription = document.querySelector("#profileDescription")
 const popups = Array.from(document.querySelectorAll('.popup'))
-
+const popupCreate = document.querySelector('#popupCreate')
 // EDIT
 const popupEdit = document.querySelector('#popupEdit')
 const cardForm = document.querySelector('#cardForm')
@@ -68,11 +68,7 @@ function saveProfileData() {
   closePopup(popupProfile)
 }
 // Отключить кнопку submit
-function disableSumbitButton(popup, validProperties) {
-  const button = popup.querySelector(`${validProperties.submitButtonSelector}`)
-  button.disabled = true
-  button.classList.add(`${validProperties.inactiveButtonClass}`)
-}
+
 // Отобразить карточки
 function displayElement(card) {
   const element = elementTemplate.querySelector('.elements__card').cloneNode(true)
@@ -116,7 +112,7 @@ function createElement() {
   const newElement = displayElement(newElementData)
   addElement(newElement, elementsContainer)
 
-  disableSumbitButton(popupEdit, validationProperties)
+  disableSumbitButton(popupCreate)
   cardForm.reset()
 
   closePopup(popupEdit)
