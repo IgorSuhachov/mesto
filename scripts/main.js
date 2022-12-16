@@ -32,10 +32,6 @@ function openPopup(popup) {
 	popup.classList.add('popup_opened')
 	// Вызов слушателя по нажатию на Escape
 	document.addEventListener('keydown', closeOnEsc)
-	// Закрытие по нажатию overlay
-	popups.forEach((popup) => {
-		popup.addEventListener('click', closeOnOverlay)
-	})
 }
 // Закрытие popup по нажатию на Escape
 function closeOnEsc(evt) {
@@ -138,3 +134,6 @@ profileClose.addEventListener('click', () => closePopup(popupProfile))
 profileAdd.addEventListener('click', () => openPopup(popupEdit))
 cardClose.addEventListener('click', () => closePopup(popupEdit))
 imageClose.addEventListener('click', () => closePopup(popupImage))
+popups.forEach((popup) => {
+	popup.addEventListener('click', closeOnOverlay)
+})
